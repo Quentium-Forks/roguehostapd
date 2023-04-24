@@ -6,11 +6,11 @@ import re
 import collections
 import os
 import json
+
 try:
     from configparser import SafeConfigParser  # Python 3
 except ImportError:
     from ConfigParser import SafeConfigParser  # Python 2
-
 
 def get_default_settings():
     """
@@ -112,7 +112,7 @@ class HostapdConfig(object):
             # write the denied mac addresses in the output
             with open(ROGUEHOSTAPD_DENY_MACS_CONFIGPATH, 'w') as writer:
                 for mac_addr in self.configuration_dict['deny_macs']:
-                    writer.write(mac_addr+'\n')
+                    writer.write(mac_addr + '\n')
 
     def update_wps_configuration(self):
         """
@@ -135,8 +135,7 @@ class HostapdConfig(object):
             self.configuration_dict['serial_number'] = '12345'
             self.configuration_dict['device_type'] = '6-0050F204-1'
             self.configuration_dict['os_version'] = '01020300'
-            self.configuration_dict['config_methods'] =\
-                'label virtual_display virtual_push_button keypad'
+            self.configuration_dict['config_methods'] = 'label virtual_display virtual_push_button keypad'
             self.configuration_dict['eap_server'] = '1'
 
     def update_security_info(self):

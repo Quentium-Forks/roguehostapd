@@ -155,7 +155,7 @@ class HandoverServer(nfc.handover.HandoverServer):
                 else:
                     summary("Handover report rejected")
 
-                message = nfc.ndef.Message(data);
+                message = nfc.ndef.Message(data)
                 sel.add_carrier(message[0], "active", message[1:])
 
         print("Handover select:")
@@ -268,11 +268,10 @@ def main():
     clf = nfc.ContactlessFrontend()
 
     parser = argparse.ArgumentParser(description='nfcpy to hostapd integration for WPS NFC operations')
-    parser.add_argument('-d', const=logging.DEBUG, default=logging.INFO,
-                        action='store_const', dest='loglevel',
+    parser.add_argument('-d', const=logging.DEBUG, default=logging.INFO, action='store_const', dest='loglevel',
                         help='verbose debug output')
-    parser.add_argument('-q', const=logging.WARNING, action='store_const',
-                        dest='loglevel', help='be quiet')
+    parser.add_argument('-q', const=logging.WARNING, action='store_const', dest='loglevel',
+                        help='be quiet')
     parser.add_argument('--only-one', '-1', action='store_true',
                         help='run only one operation and exit')
     parser.add_argument('--no-wait', action='store_true',
@@ -281,9 +280,7 @@ def main():
                         help='summary file for writing status updates')
     parser.add_argument('--success',
                         help='success file for writing success update')
-    parser.add_argument('command', choices=['write-config',
-                                            'write-password'],
-                        nargs='?')
+    parser.add_argument('command', choices=['write-config', 'write-password'], nargs='?')
     args = parser.parse_args()
 
     global only_one

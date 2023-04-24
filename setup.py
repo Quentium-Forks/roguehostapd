@@ -17,14 +17,14 @@ from roguehostapd.config.hostapdconfig import WHITE, RED
 # define project information
 NAME = 'roguehostapd'
 PACKAGES = [
-    'roguehostapd', 
-    'examples', 
-    'roguehostapd.config', 
+    'roguehostapd',
+    'examples',
+    'roguehostapd.config',
     'roguehostapd.buildutil'
 ]
 PACKAGE_DIR = {'roguehostapd': 'roguehostapd'}
 PACKAGE_DATA = {'roguehostapd': ['config/hostapd.conf', 'config/config.ini']}
-VERSION = '1.1.2'
+VERSION = '1.3.0'
 DESCRIPTION = 'Hostapd wrapper for hostapd'
 URL = 'https://github.com/wifiphisher/roguehostapd'
 AUTHOR = 'Anakin'

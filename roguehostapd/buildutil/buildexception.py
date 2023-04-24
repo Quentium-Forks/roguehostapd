@@ -6,6 +6,7 @@ class SharedLibMissError(Exception):
     """
     Define the Netlink shared library missing exception
     """
+
     def __init__(self, libname, packages):
         """
         Initialize the NetlinkMissError object

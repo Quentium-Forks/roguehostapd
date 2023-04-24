@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 """
 This module was made to wrap the hostapd
 """
@@ -8,8 +8,8 @@ import threading
 import ctypes
 import glob
 from roguehostapd.config.hostapdconfig import (
-    HostapdConfig, HOSTAPD_EXECUTION_PATH, HOSTAPD_DIR, 
-    ROGUEHOSTAPD_RUNTIME_CONFIGPATH, 
+    HostapdConfig, HOSTAPD_EXECUTION_PATH, HOSTAPD_DIR,
+    ROGUEHOSTAPD_RUNTIME_CONFIGPATH,
     ROGUEHOSTAPD_DENY_MACS_CONFIGPATH)
 
 def find_so():
@@ -27,10 +27,10 @@ class KarmaData(ctypes.Structure):
     pass
 
 
-KarmaData._fields_ = [("is_assoc", ctypes.c_ubyte), ("ssid_len",
-                                                     ctypes.c_size_t),
-                      ("ssid", ctypes.c_ubyte * 32), ("mac_addr",
-                                                      ctypes.c_ubyte * 6),
+KarmaData._fields_ = [("is_assoc", ctypes.c_ubyte),
+                      ("ssid_len", ctypes.c_size_t),
+                      ("ssid", ctypes.c_ubyte * 32),
+                      ("mac_addr", ctypes.c_ubyte * 6),
                       ("next_data", ctypes.POINTER(KarmaData))]
 
 
